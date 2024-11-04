@@ -33,6 +33,10 @@ def save_file(event, button, color):
         print(f"Text written to file: {file_name}")
     else:
         print(f"File name was not given!")
+def backup_file(file_string):
+    with open("backup.txt", "w") as backup_file:
+        backup_file.write(file_string)
+    print("Replaced the Backup file with last entry!")
 
 def load_file(event, button, color):
     file_name = filedialog.askopenfilename(defaultextension = ".txt", filetypes = [("Text Files", "*.txt"),("Python Files", "*.py"),("All Files", "*.*")])
@@ -44,6 +48,7 @@ def load_file(event, button, color):
             text = f.read()
             formatted_text = "".join(text)
 
+        backup_file(field.get("1.0", END).strip())
         field.delete("1.0", END)
         field.insert("1.0", text)
 
