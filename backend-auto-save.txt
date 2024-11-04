@@ -1,0 +1,1 @@
+Use this file to save only the last copy of text so when this editor is opened it isn't blank.
