@@ -33,9 +33,9 @@ def save_file(event, button, color):
         print(f"Text written to file: {file_name}")
     else:
         print(f"File name was not given!")
-def backup_file(file_string):
-    with open("backup.txt", "w") as backup_file:
-        backup_file.write(file_string)
+def save_backup(file_string):
+    with open("backup.txt", "w") as save_backup:
+        save_backup.write(file_string)
     print("Replaced the Backup file with last entry!")
 
 def load_file(event, button, color):
@@ -46,11 +46,24 @@ def load_file(event, button, color):
         
         with open(file_name, "r") as f:
             text = f.read()
-            formatted_text = "".join(text)
+            
 
-        backup_file(field.get("1.0", END).strip())
+        save_backup(field.get("1.0", END).strip())
         field.delete("1.0", END)
         field.insert("1.0", text)
+
+def load_backup(event):
+    with open("backup.txt", "r") as backup:
+        text = backup.read()
+
+    field.insert("1.0", text)
+
+def new_file(event, button, color):
+    old_text = field.get("1.0", END).strip()
+    save_backup(old_text)
+    button.configure(fg_color = color)
+    field.delete("1.0", END)
+
 
 
 # Define the Journal
@@ -116,6 +129,21 @@ load_button.bind("<Enter>", lambda event: btn_mouse("<Enter>", load_button, butt
 load_button.bind("<Leave>", lambda event: btn_mouse("<Leave>", load_button, button_color))
 load_button.bind("<Button-1>", lambda event: load_file(event = "<Button-1>", button = load_button, color = button_click_color))
 
+# New Button
+new_button = CTkButton(master = header,
+                       text = "New File",
+                       width = 75,
+                       height = 40,
+                       fg_color = button_color,
+                       hover = button_highlight_color,
+                       corner_radius = 5)
+
+new_button.grid(column = 2, row = 1, pady = 5, padx = 5)
+new_button.bind("<Enter>", lambda event: btn_mouse("<Enter>", new_button, button_highlight_color))
+new_button.bind("<Leave>", lambda event: btn_mouse("<Leave>", new_button, button_color))
+new_button.bind("<Button-1>", lambda event: new_file(event = "<Button-1>", button = new_button, color = button_click_color))
+
+
 # Make the text box
 field = CTkTextbox(app,
                     width = (current_w - 100),
@@ -128,5 +156,6 @@ field = CTkTextbox(app,
 field.grid(column = 0, row = 1, sticky = "nsew")
 field.grid_rowconfigure(1, weight = 1)
 
-
+# Load in the last text file from backup.txt
+load_backup(event = "<Visibility>")
 app.mainloop()
