@@ -1,1 +1,1 @@
-This is a new thing!
+I need to fix working with files and repositories on vscode with github so that I can publish from vscode with the proper security.
