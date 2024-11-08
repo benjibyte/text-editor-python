@@ -1,1 +1,0 @@
-The icon works! (on windows, i need to make an if-else statement for handling other operating systems)

@@ -35,6 +35,8 @@ def save_file(event, button, color):
         print(f"Text written to file: {file_name}")
     else:
         print(f"File name was not given!")
+    button.configure(fg_color = button_color)
+    button.configure(text_color = light_color)
 def save_backup(file_string):
     with open("backup.txt", "w") as save_backup:
         save_backup.write(file_string)
