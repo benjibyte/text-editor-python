@@ -1,0 +1,18 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250" width="250" height="250">
+	<title>New Project</title>
+	<style>
+		.s0 { fill: #9c9c9c } 
+		.s1 { fill: #8738c3 } 
+		.s2 { fill: #ebebeb } 
+		.s3 { fill: #cfcfcf } 
+		.s4 { fill: #000000 } 
+	</style>
+	<g id="Layer 1">
+		<path id="Shape 1" fill-rule="evenodd" class="s0" d="m42.3 19.7h164.7c6.6 0 12 5.3 12 12v186.7c0 6.6-5.4 12-12 12h-164.7c-6.7 0-12-5.4-12-12v-186.7c0-6.7 5.3-12 12-12z"/>
+		<path id="Shape 5" fill-rule="evenodd" class="s1" d="m125 39"/>
+		<path id="Shape 3" fill-rule="evenodd" class="s2" d="m219 56v144c0 6.6-5.4 12-12 12h-165c-6.6 0-12-5.4-12-12v-144z"/>
+		<path id="Shape 4" fill-rule="evenodd" class="s3" d="m219 56.1v14.9h-189v-14.9z"/>
+		<path id="Shape 2" fill-rule="evenodd" class="s1" d="m219 17.9v44h-189v-45z"/>
+		<path id="&gt;" class="s4" aria-label="&gt;"  d="m147.4 129l-54.2-18.6v-14.1l72 26v13.3l-72 26v-14.1z"/>
+	</g>
+</svg>

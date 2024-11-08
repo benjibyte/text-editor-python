@@ -1,5 +1,7 @@
-from tkinter import *
+from tkinter import * # Testing new SSH github key
 from customtkinter import *
+from pathlib import Path
+from PIL import ImageTk, Image
 # After I finish this build, I want to watch that tutorial from.... 
 # Atlas! the video on YT is called "Using tkinter with Classes" so I can convert this to a class based app
 
@@ -76,7 +78,10 @@ app = CTk()
 app.geometry(f"{default_width}x{default_height}")
 app.grid_columnconfigure(0, weight = 1)
 app.grid_rowconfigure(1, weight = 1)
-
+root_path = Path(__file__).parent
+icon_path = root_path / "icon.svg"
+icon_image = ImageTk.PhotoImage(Image.open(icon_path))
+app.iconphoto(True, icon_image)
 # Calls the resize function everytime I resize the window,
 # the "bind" method forces an event in this case "Configure" to a function
 
