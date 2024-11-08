@@ -79,12 +79,22 @@ app.title(title)
 app.geometry(f"{default_width}x{default_height}")
 app.grid_columnconfigure(0, weight = 1)
 app.grid_rowconfigure(1, weight = 1)
+
+# Icon
 root_path = Path(__file__).parent
-icon_path = root_path / "icon.png"
-icon_image = ImageTk.PhotoImage(Image.open(icon_path))
-app.iconphoto(True, icon_image)
-# Calls the resize function everytime I resize the window,
-# the "bind" method forces an event in this case "Configure" to a function
+icon_path = str(root_path / "icon-small-windows-version.ico")
+print(icon_path)
+
+try: 
+    
+    # icon_image = ImageTk.PhotoImage(Image.open(icon_path))
+    icon_windows_image = app.wm_iconbitmap(icon_path)
+    app.iconphoto(False, icon_windows_image)
+    # Calls the resize function everytime I resize the window,
+    # the "bind" method forces an event in this case "Configure" to a function
+except Exception as E:
+    print(f"Icon could not load: {E}")
+    
 
 code_font = ("Consolas", 20)
 dark_color = "#1D2231"

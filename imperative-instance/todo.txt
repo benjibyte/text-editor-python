@@ -1,2 +1,1 @@
-Okay so the ctk window is open, let me change the title to "Journal"
-And set the icon to my icon.png that i made inkscape
+The icon works! (on windows, i need to make an if-else statement for handling other operating systems)
