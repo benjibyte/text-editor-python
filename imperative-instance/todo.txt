@@ -1,0 +1,2 @@
+Okay so the ctk window is open, let me change the title to "Journal"
+And set the icon to my icon.png that i made inkscape

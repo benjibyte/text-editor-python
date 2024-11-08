@@ -75,11 +75,12 @@ default_height = 600
 current_w = default_width
 current_h = default_height
 app = CTk()
+app.title(title)
 app.geometry(f"{default_width}x{default_height}")
 app.grid_columnconfigure(0, weight = 1)
 app.grid_rowconfigure(1, weight = 1)
 root_path = Path(__file__).parent
-icon_path = root_path / "icon.svg"
+icon_path = root_path / "icon.png"
 icon_image = ImageTk.PhotoImage(Image.open(icon_path))
 app.iconphoto(True, icon_image)
 # Calls the resize function everytime I resize the window,
