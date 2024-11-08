@@ -4,7 +4,7 @@ from pathlib import Path
 from PIL import ImageTk, Image
 # After I finish this build, I want to watch that tutorial from.... 
 # Atlas! the video on YT is called "Using tkinter with Classes" so I can convert this to a class based app
-
+root_path = Path(__file__).parent
 # Allow theme switch
 def change_theme():
     if app._theme_name == "light":
@@ -57,7 +57,7 @@ def load_file(event, button, color):
         field.insert("1.0", text)
 
 def load_backup(event):
-    with open("backup.txt", "r") as backup:
+    with open(root_path / "backup.txt", "r") as backup:
         text = backup.read()
 
     field.insert("1.0", text)

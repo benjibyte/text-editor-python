@@ -1,3 +1,0 @@
-I want to make a gear icon on the right side of the header that has "Font size," font type, and "Theme" 
-
-so users can change from light mode to dark mode
