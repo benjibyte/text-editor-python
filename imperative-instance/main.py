@@ -1,6 +1,7 @@
 from tkinter import * # Testing new SSH github key
 from customtkinter import *
 from pathlib import Path
+import platform
 from PIL import ImageTk, Image
 # After I finish this build, I want to watch that tutorial from.... 
 # Atlas! the video on YT is called "Using tkinter with Classes" so I can convert this to a class based app
@@ -83,10 +84,17 @@ app.grid_columnconfigure(0, weight = 1)
 app.grid_rowconfigure(1, weight = 1)
 
 # Icon
+get_os = platform.system()
 root_path = Path(__file__).parent
-icon_path = str(root_path / "icon-small-windows-version.ico")
+icon_path = ""
+
+if get_os == "Windows":
+    icon_path = str(root_path / "journal-32.ico")
+else:
+    icon_path = str(root_path / "journal-32.png")
 print(icon_path)
 
+# Loading in the icon_path
 try: 
     
     # icon_image = ImageTk.PhotoImage(Image.open(icon_path))
